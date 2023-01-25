@@ -20,7 +20,35 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:id="@+id/addressContainer">
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:hint="Enter city name ......"
+                android:textSize="25sp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:id="@+id/input"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Search"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:id="@+id/search"
+                android:onClick="getData"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/addressContainer"
+            android:layout_marginTop="120dp">
 
 
             <TextView
@@ -28,7 +56,7 @@
                 android:textSize="24sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dhaka">
+                android:text="-----">
             </TextView>
 
             <TextView
@@ -55,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Clear Sky"
+                android:text="Status"
                 android:textSize="30sp"></TextView>
 
             <TextView
@@ -63,8 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="24°C"
-                android:textSize="90sp"></TextView>
+                android:text="--.-°C"
+                android:textSize="80sp"></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,6 +105,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Max Temp"></TextView>
+
+
 
                 <Space
                     android:layout_width="80dp"
@@ -97,7 +127,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentBottom="true">
-            
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:weightSum="3"
@@ -120,7 +150,7 @@
                         android:tint="#FFF">
 
                     </ImageView>
-                    
+
                     <Space
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"></Space>
@@ -212,14 +242,14 @@
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5.30am"></TextView>
+                        android:text="-.-- Km/h"></TextView>
                 </LinearLayout>
                 <Space
                     android:layout_width="5dp"
                     android:layout_height="wrap_content"></Space>
 
             </LinearLayout>
-            
+
         </LinearLayout>
 
 
