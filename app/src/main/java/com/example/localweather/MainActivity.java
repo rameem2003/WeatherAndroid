@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText input;
     Button search;
-    TextView address, temparature, status, windStatus;
+    TextView address, temparature, status, windStatus, max_temp, min_temp, humidityData, pressureData;
 
     private final String appID = "eda1ef54ac6b95c3b2e8d2ef681e6569";
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input);
         address = findViewById(R.id.address);
         temparature = findViewById(R.id.temp);
+        max_temp = findViewById(R.id.temp_max);
+        min_temp = findViewById(R.id.temp_min);
+        humidityData = findViewById(R.id.humidity);
+        pressureData = findViewById(R.id.pressure);
         status = findViewById(R.id.status);
         windStatus = findViewById(R.id.wind);
     }
@@ -70,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
                     JSONObject jsonObjectMain = jsonResponce.getJSONObject("main");
                     double temp = jsonObjectMain.getDouble("temp") - 273.15;
-                    double feelslike = jsonObjectMain.getDouble("feels_like") - 273.15;
+                    double maxTemp = jsonObjectMain.getDouble("temp_max") - 273.15;
+                    double minTemp = jsonObjectMain.getDouble("temp_min") - 273.15;
+                    String humidity = jsonObjectMain.getString("humidity");
+                    String pressure = jsonObjectMain.getString("pressure");
 
 
                     JSONObject jsonObjectWind = jsonResponce.getJSONObject("wind");
@@ -81,10 +88,14 @@ public class MainActivity extends AppCompatActivity {
                     String cityname = jsonResponce.getString("name");
                     String countryName = jsonObjectSys.getString("country");
 
-                    address.setText(cityname + " " + countryName);
+                    address.setText(cityname + "," + countryName);
                     temparature.setText(dc.format(temp) + " ℃");
                     status.setText(description.toUpperCase());
                     windStatus.setText(wind + " Km/h");
+                    max_temp.setText(dc.format(maxTemp) + " ℃");
+                    min_temp.setText(dc.format(minTemp) + " ℃");
+                    humidityData.setText(humidity + "%");
+                    pressureData.setText(pressure);
 
                 }catch (JSONException e){
                     e.printStackTrace();

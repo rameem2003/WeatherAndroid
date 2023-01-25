@@ -55,20 +55,13 @@
 
             <TextView
                 android:id="@+id/address"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-----">
             </TextView>
 
-            <TextView
-                android:id="@+id/update_at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upadate at"
-                android:textSize="18sp">
 
-            </TextView>
 
         </LinearLayout>
 
@@ -102,11 +95,26 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <TextView
-                    android:id="@+id/temp_max"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp"></TextView>
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Max Temp"
+                        android:textSize="25sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/temp_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--.-℃"
+                        android:textSize="25sp"></TextView>
+                </LinearLayout>
 
 
 
@@ -114,11 +122,26 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"></Space>
 
-                <TextView
-                    android:id="@+id/temp_min"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min Temp"></TextView>
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Min Temp"
+                        android:textSize="25sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/temp_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--.-℃"
+                        android:textSize="25sp"></TextView>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -148,7 +171,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/sunrise"
+                        android:src="@drawable/humidity"
                         android:tint="#FFF">
 
                     </ImageView>
@@ -160,15 +183,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Sunrise"
+                        android:text="Humidity"
                         android:gravity="center"></TextView>
 
                     <TextView
-                        android:id="@+id/sunrise"
+                        android:id="@+id/humidity"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5.30am"></TextView>
+                        android:text="--%"></TextView>
                 </LinearLayout>
                 <Space
                     android:layout_width="5dp"
@@ -186,7 +209,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/sunset"
+                        android:src="@drawable/pressure"
                         android:tint="#FFF">
 
                     </ImageView>
@@ -198,15 +221,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Sunset"
+                        android:text="Pressure"
                         android:gravity="center"></TextView>
 
                     <TextView
-                        android:id="@+id/sunset"
+                        android:id="@+id/pressure"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5.30am"></TextView>
+                        android:text="---"></TextView>
                 </LinearLayout>
                 <Space
                     android:layout_width="5dp"
